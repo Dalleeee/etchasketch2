@@ -1,0 +1,49 @@
+body {
+    background-color: pink;
+}
+
+#pick {
+    margin: 0 auto;
+    display: block;
+    margin-top: 30px;
+}
+
+#colorful {
+    margin: 0 auto;
+    display: block;
+    margin-top: 15px;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.black {
+    background-color: black;
+}
+
+.appear {
+    color: white;
+}
+
+.original {
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(16, 1fr);
+    grid-gap: 1px;
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    left: 475px;
+    top: 125px;
+}
+
+.custom {
+    display: grid;
+    grid-gap: 1px;
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    left: 475px;
+    top: 125px;
+}
