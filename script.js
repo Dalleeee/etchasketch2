@@ -1,11 +1,4 @@
 const container = document.querySelector('#container');
-let randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
-
-function reset() {
-    document
-      .querySelectorAll(".appear")
-      .forEach((e) => e.parentNode.removeChild(e)); //For each grid, remove from container div
-  }
 
 function originalGrid() { //16x16 grid
     for (i = 0; i < 256; i++) {
@@ -59,11 +52,21 @@ function colorGrid(number) {
         container.style.gridTemplateRows = `repeat(${number}, 1fr)`;
         gridPiece.addEventListener('mouseover', function(e){ 
             gridPiece.classList.remove('black');
-            gridPiece.style.backgroundColor = `${randomColor}`;
+            gridPiece.style.backgroundColor = randomColor();
         })
         container.appendChild(gridPiece);
     }
 }
+
+function randomColor() {
+    return '#' + Math.floor(Math.random()*16777215).toString(16);
+}
+
+function reset() {
+    document
+      .querySelectorAll(".appear")
+      .forEach((e) => e.parentNode.removeChild(e)); //For each grid, remove from container div
+  }
 
 const customButton = document.querySelector('#pick');
 customButton.addEventListener('click', createGrid);
